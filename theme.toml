@@ -1,13 +1,13 @@
-name = "XMin"
+name = "Sleek"
 license = "MIT"
-licenselink = "https://github.com/yihui/hugo-xmin/blob/master/LICENSE.md"
-description = "eXtremely Minimal Hugo theme: about 150 lines of code in total, including HTML and CSS"
-homepage = "https://xmin.yihui.org"
-demosite = "https://xmin.yihui.org"
-tags = ["minimal", "blog", "personal", "clean", "simple", "starter", "minimalist"]
+licenselink = "https://github.com/stewalec/hugo-sleek/blob/master/LICENSE.md"
+description = "Sleek, minimal Hugo theme"
+homepage = "https://codeberg.org/stewalec/hugo-sleek"
+demosite = "https://alecstewart.com"
+tags = ["hugo", "theme", "minimal"]
 features = ["blog"]
 min_version = "0.18"
 
 [author]
-  name = "Yihui Xie"
-  homepage = "https://yihui.org"
+  name = "Alec Stewart"
+  homepage = "https://alecstewart.com"

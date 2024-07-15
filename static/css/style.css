@@ -4,18 +4,24 @@ body {
   padding: 1em;
   line-height: 1.5;
 }
+.site-title { text-align: center; }
+.site-title a { text-decoration: none; }
 
 /* header and footer areas */
 .menu { padding: 0; }
 .menu li { display: inline-block; }
-.article-meta, .menu a {
+.menu a {
   text-decoration: none;
   background: #eee;
   padding: 5px;
   border-radius: 5px;
 }
-.menu, .article-meta, footer { text-align: center; }
-.title { font-size: 1.1em; }
+h1 small {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+}
+.menu, footer { text-align: center; }
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
@@ -42,7 +48,11 @@ blockquote {
 }
 
 table {
-  margin: auto;
+  margin: 0 auto;
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
   border-top: 1px solid #666;
   border-bottom: 1px solid #666;
 }
