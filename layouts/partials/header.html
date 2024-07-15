@@ -9,7 +9,7 @@
         {{ partial "head_custom.html" . }}
     </head>
     <body>
-        <h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a></h1>
+        <h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Params.title }}</a></h1>
         <nav>
             <ul class="menu">
                 {{- range .Site.Menus.main }}

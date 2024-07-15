@@ -2,10 +2,16 @@ baseurl: "https://example.org/"  # please update this to your actual URL
 languageCode: "en-us"
 title: "A minimal Hugo website"
 theme: "hugo-sleek"
-googleAnalytics: ""
-disqusShortname: ""
-ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 footnotereturnlinkcontents: "↩"
+
+mediaTypes:
+  application/customrss:
+    suffix: ""
+    delimiter: ""
+outputFormats:
+  RSS:
+    mediatype: "application/customrss"
+    baseName: "rss"
 
 permalinks:
   note: "/note/:year/:month/:day/:slug/"
@@ -19,17 +25,17 @@ menu:
     - name: About
       url: "about/"
       weight: 2
-    - name: Categories
-      url: "categories/"
+    - name: Posts
+      url: "posts/"
       weight: 3
     - name: Tags
       url: "tags/"
       weight: 4
     - name: Subscribe
-      url: "index.xml"
+      url: "rss"
 
 params:
-  author: "Alec Stewart"
+  title: "Alec Stewart"
   description: "A website built through Hugo and blogdown."
   footer: "&copy; [Yihui Xie](https://yihui.org) 2017 -- {Year} | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
 
