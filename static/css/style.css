@@ -5,7 +5,10 @@ body {
   line-height: 1.5;
 }
 .site-title { text-align: center; }
-.site-title a { text-decoration: none; }
+.site-title a, .site-title a:visited {
+  color: #000;
+  text-decoration: none;
+}
 
 /* header and footer areas */
 .menu { padding: 0; }

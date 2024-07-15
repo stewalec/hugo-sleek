@@ -1,28 +1,19 @@
-# HUGO XMIN
+# Hugo Sleek
 
-## _Keep it simple, but not simpler_
+Hugo Sleek is a fork of **[XMin](https://github.com/yihui/hugo-xmin)** by [Yihui Xie](https://yihui.org). It contains the following updates:
 
-**XMin** is a Hugo theme written by [Yihui Xie](https://yihui.org) in about four hours: half an hour was spent on the Hugo templates, and 3.5 hours were spent on styling. The main motivation for writing this theme was to provide a really minimal example to beginners of Hugo templates. This XMin theme contains about 140 lines of code in total, including the code in HTML templates and CSS (also counting empty lines).
+- Enabled responsive tables with scrollbar. Fixes table overflow on small screens.
+- Added site title parameter
+- Updated how post titles and dates are displayed
+- Included tag list in `.article-meta` of posts
+- Updated rendered whitespace as a style preference
 
+## Developing
 
-```bash
-find . -not -path '*/exampleSite/*' \( -name '*.html' -o -name '*.css' \) | xargs wc -l
+To test this theme and/or make updates to it, run these commands:
+
 ```
-
+git clone https://coderberg.org/stewalec/hugo-sleek.git
+cd hugo-sleek
+hugo server -D --themesDir=../.. --source=exampleSite
 ```
-       5 ./layouts/404.html
-      12 ./layouts/_default/single.html
-      20 ./layouts/_default/list.html
-      13 ./layouts/_default/terms.html
-       0 ./layouts/partials/foot_custom.html
-       0 ./layouts/partials/head_custom.html
-       9 ./layouts/partials/footer.html
-      20 ./layouts/partials/header.html
-      51 ./static/css/style.css
-       7 ./static/css/fonts.css
-     137 total
-```
-
-I can certainly further reduce the code, for example, by eliminating the CSS, but I believe a tiny bit of CSS can greatly improve readability. You cannot really find many CSS frameworks that only contain 50 lines of code.
-
-[![Screenshot](https://github.com/yihui/hugo-xmin/raw/master/images/screenshot.png)](https://xmin.yihui.org)
