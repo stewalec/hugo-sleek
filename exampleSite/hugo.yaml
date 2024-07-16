@@ -1,6 +1,6 @@
 baseurl: "https://example.org/"  # please update this to your actual URL
 languageCode: "en-us"
-title: "A minimal Hugo website"
+title: "Alec Stewart"
 theme: "hugo-sleek"
 footnotereturnlinkcontents: "↩"
 
@@ -33,10 +33,12 @@ menu:
       weight: 4
     - name: Subscribe
       url: "rss"
+  footer:
+    - name: RSS
+      url: "rss"
 
 params:
-  title: "Alec Stewart"
-  description: "A website built with Hugo."
+  contentLicense: "&mdash; [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
 
 markup:
   highlight:
