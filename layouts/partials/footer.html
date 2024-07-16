@@ -1,9 +1,13 @@
         <footer>
             {{ partial "foot_custom.html" . }}
-            {{- with .Site.Params.footer }}
             <hr>
-            {{ replace . "{Year}" now.Year | markdownify }}
-            {{- end }}
+            <p>
+                <strong>{{ .Site.Params.title }}</strong> &copy;
+                {{ now.Year }} &mdash; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+            </p>
+            <p>
+                <small><a href="/rss">RSS</a> | <a href="/about">About</a></small>
+                </p>
         </footer>
     </body>
 </html>

@@ -36,8 +36,7 @@ menu:
 
 params:
   title: "Alec Stewart"
-  description: "A website built through Hugo and blogdown."
-  footer: "&copy; [Yihui Xie](https://yihui.org) 2017 -- {Year} | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
+  description: "A website built with Hugo."
 
 markup:
   highlight:
