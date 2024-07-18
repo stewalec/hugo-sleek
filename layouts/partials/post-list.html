@@ -1,6 +1,6 @@
 <ul>
     {{- $pages := .Pages }}
-    {{- if .IsHome }}{{ $pages = (where .Site.RegularPages "Section" "eq" "post") }}{{ end }}
+    {{- if .IsHome }}{{ $pages = (where .Site.RegularPages "Section" "eq" "posts") }}{{ end }}
     {{- range (where $pages "Section" "!=" "") }}
     <li class="post-list">
         <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>

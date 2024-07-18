@@ -1,8 +1,7 @@
 ---
 title: Lorem Ipsum
-date: '2015-07-23'
-categories:
-  - Example
+author: Alec Stewart
+date: '2024-05-23'
 tags:
   - Markdown
 ---

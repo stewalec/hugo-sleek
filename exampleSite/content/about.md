@@ -1,25 +1,25 @@
 ---
-title: About Hugo XMin
-author: Yihui Xie
+title: About Hugo Sleek
+author: Alec Stewart
 ---
 
-**XMin** is the first Hugo theme I have designed. The original reason that I wrote it was I needed a minimal example of Hugo themes when I was writing the  [**blogdown**](https://github.com/rstudio/blogdown) book. Basically I wanted a simple theme that supports a navigation menu, a home page, other single pages, lists of pages, blog posts, categories, tags, and RSS. That is all. Nothing fancy. In terms of CSS and JavaScript, I really want to keep them minimal. In fact, this theme does not contain any JavaScript code at all, although on this example website I did introduce some JavaScript code (still relatively simple anyway). The theme does not contain any images, either, and is pretty much a plain-text theme.
+Hugo Sleek is a bare-bones, minimal Hugo theme based off **[XMin](https://github.com/yihui/hugo-xmin)** by [Yihui Xie](https://yihui.org).
 
-The theme name "XMin" can be interpreted as "**X**ie's **Min**imal theme" (Xie is my last name) or "e**X**tremely **Min**imal theme".
+It is a simple theme that supports a navigation menu, a home page, other single pages, lists of pages, blog posts, tags, and RSS. That is all. Nothing fancy. CSS has been kept to a minimum and JavaScript has not been included at all. However, JavaScript can easily be introduced through the use of the <a href="https://codeberg.org/stewalec/hugo-sleek/src/branch/master/layouts/partials">`{head,foot}-custom.html`</a> partials. This theme does not contain any images, and is a plain-text theme.
 
 ## `hugo.yaml` (the config file)
 
-For this example site, I defined permalinks for two sections, `post` and `note`, so that the links to pages under these directories will contain the date info, e.g., `https://xmin.yihui.org/post/2016/02/14/a-plain-markdown-post/`. This is optional, and it is up to your personal taste of URLs.
+For the example site, I defined permalinks for two sections, `posts` and `notes`, so that the links to pages under these directories will contain the date info, e.g. This is optional, and it is up to your personal taste of URLs.
 
-```yaml
+```
 permalinks:
-  note: "/note/:year/:month/:day/:slug/"
-  post: "/post/:year/:month/:day/:slug/"
+  notes: "/notes/:year/:month/:day/:slug/"
+  posts: "/posts/:year/:month/:day/:slug/"
 ```
 
-You can define the menu through `menu.main`, e.g.,
+You can define the menus through `menu.main` and `menu.footer`:
 
-```yaml
+```
 menu:
   main:
     - name: Home
@@ -28,30 +28,32 @@ menu:
     - name: About
       url: "about/"
       weight: 2
-    - name: Categories
-      url: "categories/"
+    - name: Posts
+      url: "posts/"
       weight: 3
+    - name: Notes
+      url: "notes/"
+      weight: 4
     - name: Tags
       url: "tags/"
-      weight: 4
-    - name: Subscribe
-      url: "index.xml"
+      weight: 5
+  footer:
+    - name: RSS
+      url: "rss"
 ```
 
 Alternatively, you can add `menu: main` to the YAML metadata of any of your pages, so that these pages will appear in the menu.
 
-The page footer can be defined in `.Params.footer`, and the text is treated as Markdown, e.g.,
+The page footer can include an assortment of navigation links. An optional content license can also be included with the text treated as Markdown.
 
 ```
 params:
-  footer: "&copy; [Yihui Xie](https://yihui.org) 2017 -- {Year}"
+  contentLicense: "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
 ```
-
-Here `{Year}` means the year in which the site is built (usually the current year).
 
 ## Custom layouts
 
-There are two layout files under `layouts/partials/` that you may want to override: `head_custom.html` and `foot_custom.html`. This is how you inject arbitrary HTML code to the head and foot areas. For example, this site has a file `layouts/partials/foot_custom.html` to support LaTeX math via KaTeX and center images automatically:
+There are two layout files under `layouts/partials/` that you may want to override: `head_custom.html` and `foot_custom.html`. This is how you inject arbitrary HTML code to the head and foot areas. For example, in the **[XMin](https://github.com/yihui/hugo-xmin)** theme, that site has a file `layouts/partials/foot_custom.html` to support LaTeX math via KaTeX and center images automatically:
 
 ```html
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
@@ -60,13 +62,13 @@ There are two layout files under `layouts/partials/` that you may want to overri
 <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
 ```
 
-You can certainly enable highlight.js for syntax highlighting by yourself through `head_custom.html` and `foot_custom.html` if you want.
+You can enable highlight.js for syntax highlighting by yourself through `head_custom.html` and `foot_custom.html` if you want.
 
 If you do not like the default fonts (e.g., `Palatino`), you may provide your own `static/css/fonts.css` under the root directory of your website to override the `fonts.css` in the theme.
 
 ## Other features
 
-I could have added more features to this theme, but I decided not to, since I have no intention to make this theme feature-rich. However, I will teach you how. I have prepared several examples via pull requests at https://github.com/yihui/hugo-xmin/pulls, so that you can see the implementations of these features when you check out the diffs in the pull requests. For example, you can:
+Yihui Xie has prepared several examples via pull requests at https://github.com/yihui/hugo-xmin/pulls, so that you can see the implementations of these features when you check out the diffs in the pull requests. For example, you can:
 
 - [Enable Google Analytics](https://github.com/yihui/hugo-xmin/pull/3)
 
@@ -80,20 +82,6 @@ I could have added more features to this theme, but I decided not to, since I ha
 
 - [Add a link in the footer of each page to "Edit this page" on Github](https://github.com/yihui/hugo-xmin/pull/6)
 
-To fully understand these examples, you have to read [the section on Hugo templates](https://bookdown.org/yihui/blogdown/templates.html) in the **blogdown** book.
+## Final Remarks
 
-# Design philosophy
-
-Lastly, a few words about my design philosophy for this theme: I have been relying on existing frameworks like Bootstrap for years since I'm not really a designer, and I was always scared by the complexity of CSS.
-
-When I started writing this theme, I asked myself, "_What if I just write from scratch?_" No Bootstrap. No Normalize.css. I don't care about IE (life could be so much easier without IE) or inconsistencies among browsers (for personal websites). As long as the theme looks okay in Chrome, Firefox, and Safari, I'm done. Thanks to the simplicity of Markdown, you cannot really produce very complicated HTML, and I think styling the HTML output from Markdown is much simpler than general HTML documents. For example, I do not need to care much about form elements like textareas or buttons.
-
-After I finished this theme, I started to wonder why I'd need `normalize.css` at all. The default appearance of modern browsers actually looks pretty good in my eyes, after I tweak the typeface a little bit.
-
-Compared to inconsistencies across browsers, I care much more about these properties of HTML elements:
-
-- Tables should always be centered, and striped tables are easier to read especially when they are wide. Tables should not have vertical borders.
-- An image should be centered if it is the only child element of a paragraph.
-- The `max-width` of images, videos, and iframes should be `100%`.
-
-I hope you can enjoy this theme. The source code is [on Github](https://github.com/yihui/hugo-xmin). Happy hacking!
+I hope you enjoy this adapted theme. The source code is [on Codeberg](https://codeberg.org/stewalec/hugo-sleek). Happy hacking!

@@ -4,7 +4,7 @@
             <p>
                 <strong>{{ .Site.Title }}</strong> &copy; {{ now.Year }}
                 {{- with .Site.Params.contentLicense }}
-                {{ . | markdownify }}
+                &mdash; {{ . | markdownify }}
                 {{- end }}
             </p>
             {{- with .Site.Menus.footer }}

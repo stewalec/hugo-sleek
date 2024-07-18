@@ -7,6 +7,7 @@ Hugo Sleek is a fork of **[XMin](https://github.com/yihui/hugo-xmin)** by [Yihui
 - Updated how post titles and dates are displayed
 - Included tag list in `.article-meta` of posts
 - Updated rendered whitespace as a style preference
+- Other minor stylistic updates
 
 ## Developing
 

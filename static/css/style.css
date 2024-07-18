@@ -4,19 +4,19 @@ body {
   padding: 1em;
   line-height: 1.5;
 }
-a, a:visited { color: #000; }
-a:hover { color: #f4511e; }
+a { color: #000; }
+a:visited, a:hover { color: #f4511e; }
+
 .site-title { text-align: center; }
-.site-title a, .site-title a:visited { text-decoration: none; }
+.site-title a, .site-title a:visited {
+  text-decoration: none;
+  color: #000;
+}
 
 /* header and footer areas */
 .menu { padding: 0; }
 .menu li { display: inline-block; }
-.menu a {
-  background: #eee;
-  padding: 5px;
-  border-radius: 5px;
-}
+.menu a { padding: 5px; }
 h1 small, li small {
   display: block;
   font-size: 0.8rem;
@@ -35,7 +35,10 @@ pre {
   padding: 1em;
   overflow-x: auto;
 }
-code { background: #f9f9f9; }
+code {
+  background: #eee;
+  padding: .2em .4em;
+}
 pre code { background: none; }
 
 /* misc elements */

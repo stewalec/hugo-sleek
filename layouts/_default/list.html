@@ -1,7 +1,11 @@
 {{ partial "header.html" . }}
 
         {{- if not .IsHome }}
+        {{- if .Data.Singular }}
+        <h1>{{ .Data.Singular | title }}: {{ .Title | markdownify }}</h1>
+        {{- else }}
         <h1>{{ .Title | markdownify }}</h1>
+        {{- end }}
         {{- end }}
 
         {{ .Content }}
