@@ -8,7 +8,7 @@ tags:
   - Style
 ---
 
-This sample post details a set of elements and how the rendered Markdown looks with the `hugo-sleek` theme. Raw Markdown taken and adapted from [Alyson Silva](https://gist.github.com/allysonsilva/85fff14a22bbdf55485be947566cc09e).
+This sample article details a set of elements and how the rendered Markdown looks with the `hugo-sleek` theme. Raw Markdown taken and adapted from [Alyson Silva](https://gist.github.com/allysonsilva/85fff14a22bbdf55485be947566cc09e).
 
 # Headers
 

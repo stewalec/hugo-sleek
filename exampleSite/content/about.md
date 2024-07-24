@@ -5,16 +5,16 @@ author: Alec Stewart
 
 Hugo Sleek is a bare-bones, minimal Hugo theme based off **[XMin](https://github.com/yihui/hugo-xmin)** by [Yihui Xie](https://yihui.org).
 
-It is a simple theme that supports a navigation menu, a home page, other single pages, lists of pages, blog posts, tags, and RSS. That is all. Nothing fancy. CSS has been kept to a minimum and JavaScript has not been included at all. However, JavaScript can easily be introduced through the use of the <a href="https://codeberg.org/stewalec/hugo-sleek/src/branch/master/layouts/partials">`{head,foot}-custom.html`</a> partials. This theme does not contain any images, and is a plain-text theme.
+It is a simple theme that supports a navigation menu, a home page, other single pages, lists of pages, blog articles, tags, and RSS. That is all. Nothing fancy. CSS has been kept to a minimum and JavaScript has not been included at all. However, JavaScript can easily be introduced through the use of the <a href="https://codeberg.org/stewalec/hugo-sleek/src/branch/master/layouts/partials">`{head,foot}-custom.html`</a> partials. This theme does not contain any images, and is a plain-text theme.
 
 ## `hugo.yaml` (the config file)
 
-For the example site, I defined permalinks for two sections, `posts` and `notes`, so that the links to pages under these directories will contain the date info, e.g. This is optional, and it is up to your personal taste of URLs.
+For the example site, I defined permalinks for two sections, `articles` and `notes`, so that the links to pages under these directories will contain the date info, e.g. This is optional, and it is up to your personal taste of URLs.
 
 ```
 permalinks:
   notes: "/notes/:year/:month/:day/:slug/"
-  posts: "/posts/:year/:month/:day/:slug/"
+  articles: "/articles/:year/:month/:day/:slug/"
 ```
 
 You can define the menus through `menu.main` and `menu.footer`:
@@ -28,8 +28,8 @@ menu:
     - name: About
       url: "about/"
       weight: 2
-    - name: Posts
-      url: "posts/"
+    - name: articles
+      url: "articles/"
       weight: 3
     - name: Notes
       url: "notes/"

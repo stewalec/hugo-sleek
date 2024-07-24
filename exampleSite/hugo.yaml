@@ -16,15 +16,15 @@ outputFormats:
 
 permalinks:
   notes: "/notes/:year/:month/:day/:slug/"
-  posts: "/posts/:year/:month/:day/:slug/"
+  articles: "/articles/:year/:month/:day/:slug/"
 
 menu:
   main:
     - name: About
       url: "about/"
       weight: 2
-    - name: Posts
-      url: "posts/"
+    - name: Articles
+      url: "articles/"
       weight: 3
     - name: Notes
       url: "notes/"

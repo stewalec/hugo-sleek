@@ -4,8 +4,8 @@ Hugo Sleek is a fork of **[XMin](https://github.com/yihui/hugo-xmin)** by [Yihui
 
 - Enabled responsive tables with scrollbar. Fixes table overflow on small screens.
 - Added site title parameter
-- Updated how post titles and dates are displayed
-- Included tag list in `.article-meta` of posts
+- Updated how article titles and dates are displayed
+- Included tag list in `.article-meta` of articles
 - Updated rendered whitespace as a style preference
 - Other minor stylistic updates
 

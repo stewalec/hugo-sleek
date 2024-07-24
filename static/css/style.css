@@ -69,7 +69,7 @@ table {
 table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee; }
-.post-list {
+.article-list {
   margin-bottom: 15px;
   list-style-type: none;
 }
