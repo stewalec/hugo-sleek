@@ -1,6 +1,12 @@
 <ul>
+    {{- $count := .Scratch.Get "article-count" }}
     {{- $pages := .Pages }}
     {{- if .IsHome }}{{ $pages = (where .Site.RegularPages "Section" "eq" "articles") }}{{ end }}
+    
+    {{- with $count }}
+        {{- $pages = $pages | first . }}
+    {{- end }}
+
     {{- range (where $pages "Section" "!=" "") }}
     <li class="article-list">
         <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
