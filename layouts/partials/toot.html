@@ -1,0 +1,56 @@
+{{ $tootData := .Scratch.Get "toot" }}
+
+{{ with $tootData }}
+{{ if ne .content "" }}
+
+<summary class="note">
+    <article class="note " id="{{ .id }}">
+        {{ if .boost }}
+        <p><span class="realname">{{ .account.display_name }}</span> boosted:</p>
+        <img class="avatar" src="{{ .boost.account.avatar }}" width="50" height="50">
+        <span class="realname">{{ .boost.account.display_name }}</span>
+        {{ else }}
+        <img class="avatar" src="{{ .account.avatar }}" width="50" height="50">
+        <span class="realname">{{ .account.display_name }}</span>
+        {{ end }}
+
+        {{ if .mentions }}
+        <span class="dash">in reply to</span>
+        {{ range $index, $value := .mentions }}
+        <span class="username">@{{ .username }}@{{ replaceRE "^https?://([^/]+).*" "$1" .url }}</span>
+        {{ end }}
+        {{ else }}
+        <span class="dash">via</span>
+        {{ if .boost }}
+        <span class="username">@{{ .boost.account.username }}@{{ replaceRE "^https?://([^/]+).*" "$1" .boost.account.url }}</span>
+        {{ else }}
+        <span class="username">@{{ .account.username }}@{{ replaceRE "^https?://([^/]+).*" "$1" .account.url }}</span>
+        {{ end }}
+        <span class="dash">&mdash;</span>
+        {{ end }}
+
+        <span class="date" title="{{ .created_at }}">
+            <a href="{{ .Permalink }}">{{ dateFormat "02 January 2006 @ 15:04" (time .created_at) }}</a>
+        </span>
+
+        <div class="note-text">
+            {{ .content | safeHTML }}
+            {{ if gt (len .media_attachments) 0 }}
+            <div class="space-evenly">
+            {{ range .media_attachments}}
+                {{ if eq .type "image" }}
+                <img src="{{ .preview_url }}" alt="{{ .description }}"/>
+                {{ end }}
+            {{ end }}
+            </div>
+            {{ end }}
+            <a href="{{ .url }}">
+                {{ partial "icon-mastodon.html" . }}
+                Source
+            </a>
+        </div>
+    </article>
+</summary>
+
+{{ end }}
+{{ end }}

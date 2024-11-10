@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+
+    {{ .Content }}
+
+    {{ range (where .Site.Pages "Section" "in" "toots") }}
+        {{ range .Sections }}
+            {{ range .Pages }}
+                <p>{{ .Params.id }}</p>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+{{ partial "footer.html" . }}

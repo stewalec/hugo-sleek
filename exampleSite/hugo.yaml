@@ -17,6 +17,14 @@ outputFormats:
 permalinks:
   notes: "/notes/:year/:month/:day/:slug/"
   articles: "/articles/:year/:month/:day/:slug/"
+  page:
+    toots: "/toots/:filename"
+
+module:
+  mounts:
+  - excludeFiles: scripts/*
+    source: content/toots
+    target: content/toots
 
 menu:
   main:

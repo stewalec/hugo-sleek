@@ -1,0 +1,28 @@
+{{ partial "header.html" . }}
+
+    <main>
+    {{ if .Params.reblog }}
+    <p><a href="/reposts"> &larr; Back to Reposts</a></p>
+    {{ else if .Params.mentions }}
+    <p><a href="/replies"> &larr; Back to Replies</a></p>
+    {{ else if .Content }}
+    <p><a href="/toots"> &larr; Back to Notes</a></p>
+    {{ end }}
+
+    {{ $dataJ := dict "account" .Params.account
+            "account.display_name" .Params.account.display_name
+            "boost" .Params.reblog
+            "created_at" .Date
+            "content" .Content
+            "id" .Params.id
+            "mentions" .Params.mentions
+            "media_attachments" .Params.media_attachments
+            "Permalink" .Permalink
+            "url" .Params.syndication
+    }}
+
+    {{ .Scratch.Set "toot" $dataJ }}
+    {{ partial "toot.html" . }}
+    </main>
+
+{{ partial "footer.html" . }}

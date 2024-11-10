@@ -1,0 +1,26 @@
+{{ partial "header.html" . }}
+
+  <main>
+  {{ .Content }}
+  {{ $listPageDateFormat := .Site.Params.listPageDateFormat | default "January, 2006"}}
+  {{ range $index, $value := .Pages.GroupByDate $listPageDateFormat }}
+  {{ range .Pages }}
+    {{ $dataJ := dict "account" .Params.account
+                      "account.display_name" .Params.account.display_name
+                      "boost" .Params.reblog
+                      "created_at" .Date
+                      "content" .Content
+                      "id" .Params.id
+                      "mentions" .Params.mentions
+                      "media_attachments" .Params.media_attachments
+                      "Permalink" .Permalink
+                      "url" .Params.syndication
+    }}
+
+    {{ .Scratch.Set "toot" $dataJ }}
+    {{ partial "toot.html" . }}
+  {{ end }}
+  {{ end }}
+  </main>
+
+{{ partial "footer.html" . }}

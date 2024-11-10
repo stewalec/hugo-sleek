@@ -81,3 +81,27 @@ thead, tfoot, tr:nth-child(even) { background: #eee; }
   margin-bottom: 15px;
   list-style-type: none;
 }
+
+/* mastodon */
+summary.note {
+  margin-bottom: 2em;
+}
+article.note {
+  border: 1px solid #ccc;
+  margin-bottom: 1em;
+  padding: 1em;
+  padding-left: 80px;
+  border-radius: 20px;
+}
+.note img.avatar {
+  float: left;
+  margin-left: -66px;
+  border-radius: 100%;
+}
+.note .realname { font-weight: bold; }
+.note .dash, .note .username, .note .date, .note .date a { color: #666; }
+.space-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
